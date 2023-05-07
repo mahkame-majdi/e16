@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <button id=" button">Click Me</button>
+            <p id="result"></p>
+        </div>
+        <script>
+            var result = document.getElementById("result")
+            var buttonElement = document.getElementById("button")
+            buttonElement.addEventListener("click", addNumber)
+            function addNumber(){
+            result.innerHTML = randomNumber(0,100)
+            }
+            function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) ) + min;
+            }
+        </script>
+    </body>
+</html>

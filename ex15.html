@@ -1,0 +1,57 @@
+    <!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container{
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+            .holder{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="holder">
+                <input id="first">
+                <select id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input id="second">
+                <button id="button">calculate</button>
+                <p id="result"></p>
+            </div>
+        </div>
+        <script>
+            var firstInput = document.getElementById("first");
+            var secondInput = document.getElementById("second");
+            var selectInput = document.getElementById("operator");
+            var result = document.getElementById("result");
+            var buttonElement = document.getElementById("button");
+            // buttonElement.addEventListener("click" , calculate);
+            // function calculate(){
+            //     if (selectInput.value === "+") {
+            //         result.innerHTML = parseFloat(firstInput.value) + parseFloat(secondInput.value)
+            //     } else if (selectInput.value === "-"){
+            //         result.innerHTML = parseFloat(firstInput.value) - parseFloat(secondInput.value)
+            //     } else if (selectInput.value === "*") {
+            //         result.innerHTML = parseFloat(firstInput.value) * parseFloat(secondInput.value)
+            //     } else if (selectInput.value === "/") {
+            //         result.innerHTML = (parseFloat(firstInput.value) / parseFloat(secondInput.value)).toFixed(2)
+            //     }
+            // }
+            buttonElement.addEventListener("click", calculate);
+            function calculate() {
+                if (selectInput.value === "+" || "-" || "*" || "/") {
+                    result.innerHTML = eval(parseFloat(firstInput.value) + (selectInput.value) + parseFloat(secondInput.value))
+                }
+            }
+        </script>
+    </body>
+</html>
